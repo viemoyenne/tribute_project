@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&display=swap");
+
+$text-color: white;
+$heading-color: #2f3542;
+$figcaption-color: #747d8c;
+$tribute-color: #2f3542;
+$gradient-background: repeating-linear-gradient(
+  45deg,
+  #e3e3db,
+  #e3e3db 1px,
+  #f1f2f6 2px,
+  #f1f2f6 5px
+);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  padding: 2rem 0.5rem 3rem 0.5rem;
+  background: $gradient-background;
+  
+  h1:hover {
+      background-color: cyan;
+    }
+
+  #title {
+    margin-bottom: 0rem;
+    color: $heading-color;
+    font-size: 4rem;
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 0.9rem;
+
+    span {
+      display: none;
+    }
+  }
+
+  #img-div {
+    img {
+      display: block;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    #img-caption {
+      max-width: 400px;
+      padding: 1.2rem;
+      margin-left: 110px;
+      margin-right: 10px;
+
+      color: $text-color;
+      line-height: 1.5;
+      text-align: center;
+
+      background-color: $figcaption-color;
+      box-shadow: 0 10px 35px 0px cyan;
+    }
+  }
+}
+
+main {
+  section {
+    padding: 2.5rem;
+  }
+
+  #tribute-info {
+    color: $text-color;
+    background-color: $tribute-color;
+    line-height: 1.5;
+    font-size: 1.1rem;
+
+    .info-container {
+      max-width: 900px;
+
+      p {
+        margin-bottom: 1.5rem;
+      }
+
+      img {
+        max-width: 50%;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  #kaga-by-numbers {
+    text-align: center;
+    background-color: #ced6e0;
+
+    h2 {
+      font-family: "Oswald", sans-serif;
+      letter-spacing: 0.1rem;
+    }
+
+    .number {
+      margin: 1rem 0;
+
+      div:first-child {
+        font-family: "Roboto Slab", serif;
+        font-size: 4rem;
+        line-height: 1;
+      }
+
+      div:last-child {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  #quote {
+    background-image: url("https://i.ibb.co/7X40Bv8/FE.jpg");
+    background-size: cover;
+    filter: grayscale(100%);
+
+    .quote-container {
+      max-width: 500px;
+      margin: 1rem auto;
+
+      font-size: 1.2rem;
+      color: $text-color;
+      text-align: center;
+
+      z-index: 2;
+
+      q {
+        font-size: 1.5rem;
+        font-family: "PT Serif", serif;
+      }
+    }
+  }
+
+  #reference {
+    background: $gradient-background;
+    padding-bottom: 1.5rem;
+
+    .reference-container {
+      max-width: 900px;
+      margin: 0 auto;
+      h2 {
+        font-weight: normal;
+      }
+
+      a {
+        display: block;
+        margin: 1rem 0;
+
+        color: black;
+        font-style: italic;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  padding: 1rem;
+  color: $text-color;
+  background-color: #2f3542;
+  text-align: center;
+
+  a {
+    color: $text-color;
+    text-decoration: underline;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  header {
+    display: auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+
+    #title {
+      grid-row: 1 / span 1;
+      margin-left: auto;
+
+      span {
+        display: inline;
+      }
+    }
+
+    #img-div {
+      grid-row: 1 / span 1;
+
+      img {
+        width: 70%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px) {
+  header {
+    grid-template-columns: 1fr 300px 300px 1fr;
+
+    #title {
+      font-size: 5rem;
+      grid-column: 2 / span 1;
+    }
+
+    #img-div {
+      grid-column: 3 / span 1;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    #tribute-info {
+      padding: 4rem 2rem;
+
+      .info-container {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        margin: 0 auto;
+
+        p {
+          margin: 0;
+        }
+
+        img {
+          max-width: 80%;
+        }
+      }
+    }
+
+    #kaga-by-numbers {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 3rem;
+
+      h2 {
+        grid-column: 1 / span 4;
+      }
+
+      .number:first-of-type {
+        grid-column: 2 / span 1;
+      }
+      .number:last-of-type {
+        grid-column: 3 / span 1;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  header {
+    grid-template-columns: 1fr 450px 450px 1fr;
+  }
+}
